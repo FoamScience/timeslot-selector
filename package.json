@@ -1,17 +1,17 @@
 {
-  "name": "week-hours-picker",
-  "version": "1.0.13",
-  "description": "Hours picker by week day",
+  "name": "timeslot-selector",
+  "version": "0.1.0",
+  "description": "A fork of github.com/clobucks/week-hours-picker",
   "main": "src/index.js",
-  "repository": "git@github.com:clobucks/week-hours-picker.git",
+  "repository": "git@github.com:FoamScience/timeslot-selector.git",
   "license": "MIT",
   "keywords": [
     "schedule",
     "time-picker",
     "week-time-picker"
   ],
-  "bugs": "https://github.com/clobucks/week-hours-picker/issues",
-  "homepage": "https://clobucks.github.io/week-hours-picker",
+  "bugs": "https://github.com/FoamScience/timeslot-selector/issues",
+  "homepage": "https://github.com/FoamScience/timeslot-selector",
   "contributors": [
     "iknpx <iknpx@aol.com> (https://github.com/iknpx)"
   ],
