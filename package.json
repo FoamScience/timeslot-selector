@@ -1,16 +1,21 @@
 {
   "name": "timeslot-selector",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A fork of github.com/clobucks/week-hours-picker",
   "main": "src/index.js",
-  "repository": "git@github.com:FoamScience/timeslot-selector.git",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/FoamScience/timeslot-selector.git"
+  },
   "license": "MIT",
   "keywords": [
     "schedule",
     "time-picker",
     "week-time-picker"
   ],
-  "bugs": "https://github.com/FoamScience/timeslot-selector/issues",
+  "bugs": {
+    "url": "https://github.com/FoamScience/timeslot-selector/issues"
+  },
   "homepage": "https://github.com/FoamScience/timeslot-selector",
   "contributors": [
     "iknpx <iknpx@aol.com> (https://github.com/iknpx)"
@@ -40,5 +45,9 @@
       "yarn format",
       "git add"
     ]
-  }
+  },
+  "directories": {
+    "doc": "docs"
+  },
+  "author": "foamScience"
 }

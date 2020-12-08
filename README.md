@@ -1,11 +1,6 @@
-[![npm version](https://badge.fury.io/js/week-hours-picker.svg)](https://badge.fury.io/js/week-hours-picker)
-[![Downloads](http://img.shields.io/npm/dm/week-hours-picker.svg?style=flat)](https://npmjs.org/package/week-hours-picker)
+# timeslot-selector
 
-![](https://raw.githubusercontent.com/clobucks/week-hours-picker/master/preview.png)
-
-# [week-hours-picker](https://clobucks.github.io/week-hours-picker)
-
-Hours picker by week day
+Hours picker by week day with custom hours range
 
 ## Usage
 
@@ -63,6 +58,10 @@ Hours picker by week day
                     node: '',
                     row: '',
                 },
+
+                // custom start (included) and end hours (excluded)
+                startHour: 7,
+                endHour: 18
             }
 
             weekHoursPicker(
