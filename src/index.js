@@ -267,6 +267,9 @@ const library = (node, props, callback = () => {}, options = {}) => {
                     row: '',
                     selected: '',
                 },
+                
+                startHour: 0,
+                endHour: 24,
             },
             options,
         ),
@@ -382,7 +385,7 @@ const library = (node, props, callback = () => {}, options = {}) => {
             element.classList.add(factory.options.classes.header)
         }
 
-        for (let i = 0; i < 24; i++) {
+        for (let i = factory.options.startHour; i < factory.options.endHour; i++) {
             const hour = document.createElement('span')
 
             hour.classList.add(classnames.headerHour)
@@ -430,7 +433,10 @@ const library = (node, props, callback = () => {}, options = {}) => {
                 }
             }
 
-            hour.innerHTML = i
+            if (index == 0) {
+                hour.innerHTML = i.toString()+ ":00 - " + (i+1).toString() + ":00"
+            }
+            
 
             hour.addEventListener('click', () => {
                 factory.handleHourClick(index, i)
