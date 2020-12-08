@@ -120,7 +120,7 @@ const css = `
         -ms-align-items: center;
         align-items: center;
         height: 100%;
-        width: 26px;
+        width: 78px;
         justify-content: center;
 
         cursor: pointer;
@@ -203,7 +203,7 @@ const css = `
         -ms-align-items: center;
         align-items: center;
         height: 100%;
-        width: 26px;
+        width: 78px;
         justify-content: center;
 
         cursor: pointer;
@@ -221,7 +221,7 @@ const css = `
     }
 
     .${classnames.selected}, .${classnames.selected}:hover {
-        background-color: #DDDDDD;
+        background-color: #068b45;
         color: #333333;
         font-weight: 500;
     }
@@ -268,8 +268,8 @@ const library = (node, props, callback = () => {}, options = {}) => {
                     selected: '',
                 },
                 
-                startHour: 0,
-                endHour: 24,
+                startHour: 7,
+                endHour: 18,
             },
             options,
         ),
@@ -394,7 +394,7 @@ const library = (node, props, callback = () => {}, options = {}) => {
                 hour.classList.add(factory.options.classes.headerHour)
             }
 
-            hour.innerHTML = i
+            hour.innerHTML = i.toString()+":00-" + (i+1).toString()+":00"
 
             hour.addEventListener('click', () => {
                 factory.handleHeaderClick(i)
@@ -416,7 +416,7 @@ const library = (node, props, callback = () => {}, options = {}) => {
             element.classList.add(factory.options.classes.row)
         }
 
-        for (let i = 0; i < 24; i++) {
+        for (let i = factory.options.startHour; i < factory.options.endHour; i++) {
             const hour = document.createElement('span')
 
             hour.classList.add(classnames.hour)
@@ -433,11 +433,6 @@ const library = (node, props, callback = () => {}, options = {}) => {
                 }
             }
 
-            if (index == 0) {
-                hour.innerHTML = i.toString()+ ":00 - " + (i+1).toString() + ":00"
-            }
-            
-
             hour.addEventListener('click', () => {
                 factory.handleHourClick(index, i)
             })
@@ -452,13 +447,14 @@ const library = (node, props, callback = () => {}, options = {}) => {
         const { state } = factory
 
         factory.state = Object.keys(state).reduce((result, row) => {
+            const hLength = factory.options.endHour - factory.options.startHour
             if (row.toString() === day.toString()) {
                 return {
                     ...result,
                     [row]:
-                        state[row] && state[row].length === 24
+                        state[row] && state[row].length === hLength
                             ? []
-                            : Array.from({ length: 24 }, (_, i) => i),
+                            : Array.from({ length: hLength }, (_, i) => i),
                 }
             }
 
